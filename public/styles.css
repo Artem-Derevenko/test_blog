@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  vertical-align: baseline;
+  background: transparent;
+  box-sizing: border-box; }
+
+body {
+  line-height: 1;
+  height: 100%;
+  background-color: #ffffff; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+.page-wrap {
+  max-width: 1020px;
+  margin: 0 auto; }
+  .page-wrap .sorting {
+    margin-top: 30px;
+    color: #A9A9A9;
+    font-size: 14px; }
+    .page-wrap .sorting span {
+      display: inline-block;
+      margin-left: 20px;
+      cursor: pointer; }
+      .page-wrap .sorting span:hover {
+        text-decoration: underline; }
+  .page-wrap .blog-list {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start; }
+  .page-wrap .blog-item {
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+    text-decoration: none;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out; }
+    .page-wrap .blog-item:hover {
+      -webkit-box-shadow: 10px 17px 20px 1px rgba(0, 0, 0, 0.35);
+      -moz-box-shadow: 10px 17px 20px 1px rgba(0, 0, 0, 0.35);
+      box-shadow: 10px 17px 20px 1px rgba(0, 0, 0, 0.35); }
+    .page-wrap .blog-item > div {
+      padding: 20px; }
+      .page-wrap .blog-item > div h2 {
+        font-size: 14px;
+        color: #00BFFF;
+        text-transform: uppercase;
+        margin-bottom: 15px; }
+      .page-wrap .blog-item > div .description {
+        font-size: 14px;
+        color: #5F9EA0;
+        margin-bottom: 20px; }
+      .page-wrap .blog-item > div .info {
+        color: #A9A9A9;
+        font-size: 12px; }
+        .page-wrap .blog-item > div .info .views {
+          display: inline-block;
+          margin-left: 40px; }
+          .page-wrap .blog-item > div .info .views i {
+            display: inline-block;
+            margin-right: 3px;
+            position: relative;
+            top: 5px; }
+
+/*# sourceMappingURL=styles.css.map*/
