@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BlogItem from './components/BlogItem/BlogItem.jsx';
-import { changeSorting } from './actions.js';
+import { changeSorting, searchItem } from './actions.js';
+import TextField from 'material-ui/TextField';
 
 class Home extends Component {
-	constructor(props) {
-        super(props);
-        this.state = {
-            searchValue: ''
-        };
-    }
-
     changeSorting = (value) => {
         this.props.onChangeSorting(value);
     }
+
+    handleChangeInput = (event) => {
+        const value = event.target.value
+        this.props.onSearchItem(value);
+    }
+
+    // _handleKeyPressSearch = (e) => {
+    //     if ( e.keyCode === 13 ) {
+    //         this.props.onSearchItem(this.state.searchValue);
+    //     }
+    // }
 
     render() {
     	const { list, search, sorting } = this.props;
@@ -44,17 +49,30 @@ class Home extends Component {
 
         return (
         	<div>
-        		<p className={ "sorting" }>
-        			Cортировка: 
-        			<span onClick={ () => this.changeSorting('date') }>по дате</span> 
-        			<span onClick={ () => this.changeSorting('views') }>по популярности</span>
-        		</p>
-	            <div className={"blog-list"}>
+                <p className = { "search" }> 
+                <TextField
+                    floatingLabelText = "Введите текст поиска"
+                    fullWidth = {true}
+                    value = {search}
+                    //onKeyDown = { (e) => this._handleKeyPressSearch(e)}
+                    onChange = { (event) => this.handleChangeInput(event)}
+                />
+                </p>
+                {
+                    (searchList.length > 0) && (
+                        <p className = { "sorting" }>
+                            Cортировка: 
+                            <span className = { ( sorting === "date" ) ? "active" : "" } onClick={ () => this.changeSorting('date') }>по дате</span> 
+                            <span className = { ( sorting === "views" ) ? "active" : "" } onClick={ () => this.changeSorting('views') }>по популярности</span>
+                        </p>
+                    )
+                }
+	            <div className = {"blog-list"}>
 	        		{
 	                    (searchList.length > 0)
 	                        ? ( searchList.map(
 	                            (item, i) => (<BlogItem key={i} blogItem={item} />) ))
-	                        : (<div className='block-item'>По данному запросу ничего не найдено!</div>)
+	                        : (<div className='block-error'>По данному запросу ничего не найдено!</div>)
 	                }
 	            </div>
 	        </div>
@@ -74,6 +92,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onChangeSorting: (value) => {
             dispatch(changeSorting(value));
+        },
+        onSearchItem: (str) => {
+            dispatch(searchItem(str));
         }
     }
 };

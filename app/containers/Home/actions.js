@@ -5,3 +5,9 @@ export function changeSorting(value) {
         dispatch({type: listAction.SORTING_LIST, sorting: value });
     };
 }
+
+export function searchItem(str) {
+    return (dispatch) => {
+        dispatch({type: listAction.SEARCH_ITEM, text:str });
+    };
+}

@@ -40,20 +40,25 @@ a {
 .page-wrap {
   max-width: 1020px;
   margin: 0 auto; }
+  .page-wrap .search {
+    padding: 0 20px; }
   .page-wrap .sorting {
     margin-top: 30px;
+    padding: 0 20px;
     color: #A9A9A9;
     font-size: 14px; }
     .page-wrap .sorting span {
       display: inline-block;
       margin-left: 20px;
       cursor: pointer; }
+      .page-wrap .sorting span.active {
+        color: #00BFFF; }
       .page-wrap .sorting span:hover {
         text-decoration: underline; }
   .page-wrap .blog-list {
     width: 100%;
     height: auto;
-    margin-top: 40px;
+    margin-top: 20px;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -80,7 +85,8 @@ a {
       -moz-box-shadow: 10px 17px 20px 1px rgba(0, 0, 0, 0.35);
       box-shadow: 10px 17px 20px 1px rgba(0, 0, 0, 0.35); }
     .page-wrap .blog-item > div {
-      padding: 20px; }
+      padding: 20px;
+      min-height: 215px; }
       .page-wrap .blog-item > div h2 {
         font-size: 14px;
         color: #00BFFF;
@@ -101,5 +107,9 @@ a {
             margin-right: 3px;
             position: relative;
             top: 5px; }
+  .page-wrap .block-error {
+    text-align: center;
+    padding: 50px 20px;
+    color: #A9A9A9; }
 
 /*# sourceMappingURL=styles.css.map*/

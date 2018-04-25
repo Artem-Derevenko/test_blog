@@ -52,14 +52,21 @@ a {
 .page-wrap {
   max-width: 1020px;
   margin: 0 auto;
+  .search {
+    padding: 0 20px;
+  }
   .sorting {
     margin-top: 30px;
+    padding: 0 20px;
     color: #A9A9A9;
     font-size: 14px;
     span {
       display: inline-block;
       margin-left: 20px;
       cursor: pointer;
+      &.active {
+        color: #00BFFF;
+      }
       &:hover {
         text-decoration: underline;
       }
@@ -68,7 +75,7 @@ a {
   .blog-list {
     width: 100%;
     height: auto;
-    margin-top: 40px;
+    margin-top: 20px;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -98,6 +105,7 @@ a {
     }
     & > div {
       padding: 20px;
+      min-height: 215px;
       h2 {
         font-size: 14px;
         color: #00BFFF;
@@ -124,6 +132,11 @@ a {
         }
       }
     }
+  }
+  .block-error {
+    text-align: center;
+    padding: 50px 20px;
+    color: #A9A9A9;
   }
 }
 
