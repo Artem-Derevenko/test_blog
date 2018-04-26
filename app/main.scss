@@ -138,5 +138,26 @@ a {
     padding: 50px 20px;
     color: #A9A9A9;
   }
+  .post-wrap {
+    margin-top: 30px;
+    min-height: 500px;
+    padding: 30px;
+    h2 {
+        font-size: 18px;
+        color: #00BFFF;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+      }
+      .description {
+        font-size: 14px;
+        color: #5F9EA0;
+      }
+  }
+  .link-home {
+    font-size: 14px;
+    color: #A9A9A9;
+    display: inline-block;
+    margin-top: 30px;
+  }
 }
 

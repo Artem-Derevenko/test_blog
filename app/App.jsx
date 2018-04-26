@@ -8,7 +8,7 @@ import {
 import { Provider } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import projectStore from './store.js';
-import Blog from './containers/Blog/blog.jsx';
+import PostPage from './containers/PostPage/PostPage.jsx';
 import Page404 from './containers/Page404/Page404.jsx';
 import Home from './containers/Home/Home.jsx';
 import './main.scss';
@@ -20,7 +20,7 @@ ReactDOM.render((
 				<div className="page-wrap">
 					<Switch>
 						<Route exact path="/" component={Home} />
-						<Route path="/blog/:id" component={Blog} />
+						<Route path="/post/:id" component={PostPage} />
 						<Route path="*" component={Page404} />
 					</Switch>
 				</div>

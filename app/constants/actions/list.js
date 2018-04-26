@@ -1,4 +1,4 @@
-export const SHOW_LIST = 'SHOW_LIST';
+export const GET_POST_ID = 'GET_POST_ID';
 
 export const SEARCH_ITEM = 'SEARCH_ITEM';
 

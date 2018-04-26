@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BlogItem from './components/BlogItem/BlogItem.jsx';
-import { changeSorting, searchItem } from './actions.js';
+import { changeSorting, searchItem, getPostId } from './actions.js';
 import TextField from 'material-ui/TextField';
 
 class Home extends Component {
@@ -12,6 +12,10 @@ class Home extends Component {
     handleChangeInput = (event) => {
         const value = event.target.value
         this.props.onSearchItem(value);
+    }
+
+    getId = (id) => {
+        this.props.onGetPostId(id);
     }
 
     // _handleKeyPressSearch = (e) => {
@@ -71,7 +75,7 @@ class Home extends Component {
 	        		{
 	                    (searchList.length > 0)
 	                        ? ( searchList.map(
-	                            (item, i) => (<BlogItem key={i} blogItem={item} />) ))
+	                            (item, i) => (<BlogItem key={i} blogItem={item} getId = {this.getId} />) ))
 	                        : (<div className='block-error'>По данному запросу ничего не найдено!</div>)
 	                }
 	            </div>
@@ -95,6 +99,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         onSearchItem: (str) => {
             dispatch(searchItem(str));
+        },
+        onGetPostId : (id) => {
+            dispatch(getPostId(id));
         }
     }
 };

@@ -8,6 +8,12 @@ export function changeSorting(value) {
 
 export function searchItem(str) {
     return (dispatch) => {
-        dispatch({type: listAction.SEARCH_ITEM, text:str });
+        dispatch({type: listAction.SEARCH_ITEM, text: str });
+    };
+}
+
+export function getPostId(id) {
+    return (dispatch) => {
+        dispatch({type: listAction.GET_POST_ID, id: id });
     };
 }
